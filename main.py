@@ -32,6 +32,7 @@ def clean_data(df):
     df['City'] = df['City'].map(cleaning.clean_city)
     df['Currency'] = df['Currency'].map(lambda x: 'AUD' if x == 'AUD/NZD' else x)
     df['Other Currency'] = df['Other Currency'].map(cleaning.clean_other_currency)
+    df['Industry'] = df['Industry'].map(cleaning.clean_industry)
     # Clean both Salary and Bonus
     for col in ['Salary', 'Bonus']:
         # Convert to string first to handle any existing NaNs, then clean
